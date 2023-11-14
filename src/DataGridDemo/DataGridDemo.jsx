@@ -13,12 +13,13 @@ export default function DataGridDemo({ data, onInitialDataChange }) {
   const [isModalOpen, setModalOpen] = useState(false)
   const [initialValue, setInitialValue] = useState('')
   const [selectedRowId, setSelectedRowId] = useState(null)
+  const [selectedColumnName, setSelectedColumnName] = useState(null)
 
   React.useEffect(() => {}, [initialValue])
 
-  const handleUpdate = (id, updatedValue) => {
-    console.log(id, updatedValue) // correct
-    onInitialDataChange(id, 'total1', updatedValue)
+  const handleUpdate = (id, columnName, updatedValue) => {
+    // const handleInitialDataChange = (id, field, value)
+    onInitialDataChange(id, columnName, updatedValue)
   }
 
   const onSubmitHandle = () => {
@@ -29,8 +30,9 @@ export default function DataGridDemo({ data, onInitialDataChange }) {
     const valueToSet =
       cellData && columnName in cellData ? cellData[columnName] : ''
 
-    console.log(cellData)
     setSelectedRowId(cellData.id)
+    setSelectedColumnName(columnName)
+
     setInitialValue(valueToSet)
     setModalOpen(true)
   }
@@ -71,6 +73,7 @@ export default function DataGridDemo({ data, onInitialDataChange }) {
           initialValue={initialValue}
           handleUpdate={handleUpdate}
           rowId={selectedRowId}
+          columnName={selectedColumnName}
         />
       </Modal>
     </div>

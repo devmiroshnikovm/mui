@@ -1,15 +1,14 @@
-import PercentageCell from '../PercentageCell/PercentageCell';
-import TextField from '@mui/material/TextField';
+import PercentageCell from '../PercentageCell/PercentageCell'
+import TextField from '@mui/material/TextField'
 
 const getDataGridColumns = (openModal, styles) => [
-  
-    {
-        field: 'id',
-        headerName: 'ID',
-        flex: 0.5,
-        headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
-      },
-      /* {
+  {
+    field: 'id',
+    headerName: 'ID',
+    flex: 0.5,
+    headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
+  },
+  /* {
         field: 'department',
         headerName: 'Department',
         flex: 3,
@@ -58,117 +57,107 @@ const getDataGridColumns = (openModal, styles) => [
         headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
       }, */
 
-      {
-        field: 'installationcomments',
-        headerName: 'СМР',
-        flex: 1,
-        renderCell: (params) => (
-          <div
-            onClick={(e) => {
-              e.stopPropagation()
-              openModal(params.row, 'installationcomments')
-            }}
-          >
-            <TextField
-              size="small"
-              variant="outlined"
-              value={params.value}
-              onChange={(e) => {}}
-              InputProps={{
-                sx: {
-                  fontSize: '0.875rem',
-                  height: '100%',
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'transparent',
-                  },
-                },
-              }}
-              sx={{
-                '& .MuiTextField-root': { m: 0, height: '100%' },
-              }}
-            />
-          </div>
-        ),
-        headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
-      },
+  {
+    field: 'installationcomments',
+    headerName: 'СМР',
+    flex: 1,
+    renderCell: (params) => (
+      <div
+        onClick={(e) => {
+          e.stopPropagation()
+          openModal(params.row, params.field)
+        }}
+      >
+        <TextField
+          size="small"
+          variant="outlined"
+          value={params.value}
+          onChange={(e) => {}}
+          InputProps={{
+            sx: {
+              fontSize: '0.875rem',
+              height: '100%',
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'transparent',
+              },
+            },
+          }}
+          sx={{
+            '& .MuiTextField-root': { m: 0, height: '100%' },
+          }}
+        />
+      </div>
+    ),
+    headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
+  },
 
-      {
-        field: 'pnrcomments',
-        headerName: 'ПНР',
-        flex: 1,
-        renderCell: (params) => (
-          <div
-            onClick={(e) => {
-              e.stopPropagation()
-              openModal(params.row, 'pnrcomments')
-            }}
-          >
-            <TextField
-              size="small"
-              variant="outlined"
-              value={params.value}
-              onChange={(e) => {}}
-              InputProps={{
-                sx: {
-                  fontSize: '0.875rem',
-                  height: '100%',
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'transparent',
-                  },
-                },
-              }}
-              sx={{
-                '& .MuiTextField-root': { m: 0, height: '100%' },
-              }}
-            />
-          </div>
-        ),
-        headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
-      },
+  {
+    field: 'pnrcomments',
+    headerName: 'ПНР',
+    flex: 1,
+    renderCell: (params) => (
+      <div
+        onClick={(e) => {
+          e.stopPropagation()
+          openModal(params.row, params.field)
+        }}
+      >
+        <TextField
+          size="small"
+          variant="outlined"
+          value={params.value}
+          onChange={(e) => {}}
+          InputProps={{
+            sx: {
+              fontSize: '0.875rem',
+              height: '100%',
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'transparent',
+              },
+            },
+          }}
+          sx={{
+            '& .MuiTextField-root': { m: 0, height: '100%' },
+          }}
+        />
+      </div>
+    ),
+    headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
+  },
 
-      {
-        field: 'iddoccomments',
-        headerName: 'ИД',
-        flex: 1,
-        renderCell: (params) => (
-          <div
-            onClick={(e) => {
-              e.stopPropagation()
-              openModal(params.row, 'iddoccomments')
-            }}
-          >
-            <TextField
-              size="small"
-              variant="outlined"
-              value={params.value}
-              onChange={(e) => {}}
-              InputProps={{
-                sx: {
-                  fontSize: '0.875rem',
-                  height: '100%',
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'transparent',
-                  },
-                },
-              }}
-              sx={{
-                '& .MuiTextField-root': { m: 0, height: '100%' },
-              }}
-            />
-          </div>
-        ),
-        headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
-      },
-      
+  {
+    field: 'iddoccomments',
+    headerName: 'ИД',
+    flex: 1,
+    renderCell: (params) => (
+      <div
+        onClick={(e) => {
+          e.stopPropagation()
+          openModal(params.row, params.field)
+        }}
+      >
+        <TextField
+          size="small"
+          variant="outlined"
+          value={params.value}
+          onChange={(e) => {}}
+          InputProps={{
+            sx: {
+              fontSize: '0.875rem',
+              height: '100%',
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'transparent',
+              },
+            },
+          }}
+          sx={{
+            '& .MuiTextField-root': { m: 0, height: '100%' },
+          }}
+        />
+      </div>
+    ),
+    headerClassName: `${styles.boldHeader} ${styles.headerBgColor}`,
+  },
+]
 
-];
-
-export default getDataGridColumns;
-
-
-
-
-
-
-
-  
+export default getDataGridColumns

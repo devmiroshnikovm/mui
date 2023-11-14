@@ -7,9 +7,7 @@ const postUpdate = async (id, columnName, value) => {
       columnName,
       value, 
     });
-
-    console.log('Update successful:', response.data);
-    return response.data;
+    return response;
   } catch (error) {
     console.error('Error in postUpdate:', error);
     throw error;

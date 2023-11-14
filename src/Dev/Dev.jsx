@@ -15,18 +15,13 @@ const SignupSchema = Yup.object().shape({
     .required('Обязательное поле'),
 })
 
-function Dev({ onSubmitHandle, initialValue, rowId, handleUpdate }) {
-  const [successMessage, setSuccessMessage] = useState('')
-
-  const columnName = ''
-
-  useEffect(() => {
-    const timer = successMessage
-      ? setTimeout(() => setSuccessMessage(''), 5000)
-      : null
-    return () => clearTimeout(timer)
-  }, [successMessage])
-
+function Dev({
+  onSubmitHandle,
+  initialValue,
+  rowId,
+  columnName,
+  handleUpdate,
+}) {
   return (
     <div className="App">
       <center>
@@ -43,8 +38,8 @@ function Dev({ onSubmitHandle, initialValue, rowId, handleUpdate }) {
                 values.comments
               )
               if (response.status === 200) {
-                handleUpdate(rowId, values.comments)
-                setSuccessMessage(response.status)
+                handleUpdate(rowId, columnName, values.comments)
+                onSubmitHandle()
               } else {
                 setErrors({ submit: response.status })
               }
@@ -107,10 +102,6 @@ function Dev({ onSubmitHandle, initialValue, rowId, handleUpdate }) {
             </Form>
           )}
         </Formik>
-
-        {successMessage && (
-          <div className={styles['form-level-success']}>{successMessage}</div>
-        )}
       </center>
     </div>
   )
