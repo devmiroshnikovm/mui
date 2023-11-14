@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import styles from './styles.module.css'
@@ -15,10 +15,10 @@ const SignupSchema = Yup.object().shape({
     .required('Обязательное поле'),
 })
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-
 function Dev({ onSubmitHandle, initialValue, rowId, handleUpdate }) {
   const [successMessage, setSuccessMessage] = useState('')
+
+  const columnName = ''
 
   useEffect(() => {
     const timer = successMessage
@@ -37,8 +37,11 @@ function Dev({ onSubmitHandle, initialValue, rowId, handleUpdate }) {
           initialValues={{ comments: initialValue }}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             try {
-              const url = 'your-api-url' // Replace with your actual API URL
-              const response = await postUpdate(url, rowId, values.comments)
+              const response = await postUpdate(
+                rowId,
+                columnName,
+                values.comments
+              )
               if (response.status === 200) {
                 handleUpdate(rowId, values.comments)
                 setSuccessMessage(response.status)

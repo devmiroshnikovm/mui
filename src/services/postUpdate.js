@@ -1,16 +1,17 @@
 import axios from 'axios';
 
-const postUpdate = async (url, id, value) => {
+const postUpdate = async (id, columnName, value) => {
   try {
-    // Performing a POST request using Axios
-    const response = await axios.post(url, {
-      id,   // Assuming the server expects an 'id' in the request body  
-      value // and a 'value' field representing the updated value
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/update-status`, {
+      id,  
+      columnName,
+      value, 
     });
 
-   
-    return response;
+    console.log('Update successful:', response.data);
+    return response.data;
   } catch (error) {
+    console.error('Error in postUpdate:', error);
     throw error;
   }
 };
