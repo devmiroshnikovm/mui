@@ -1,0 +1,31 @@
+/* styles.module.css */
+.dataGridCell {
+   white-space: normal; 
+    overflow: hidden; 
+    word-break: break-word; 
+    text-align: left;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    
+  }
+
+.boldHeader {
+  
+  overflow: hidden;
+  word-break: break-word;
+  text-align: left;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+  

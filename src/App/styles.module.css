@@ -1,0 +1,15 @@
+/* styles.module.css */
+.box {
+  width: 100vw;  /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0;     /* Remove margin to fill the entire screen */
+  overflow: auto; /* Adjust overflow as needed */
+}
+
+.dataGridContainer {
+  width: calc(100% - 20px); /* Subtract the total horizontal margins from the width */
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}

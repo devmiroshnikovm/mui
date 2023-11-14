@@ -1,0 +1,108 @@
+/* styles.module.css */
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.is-invalid {
+    border-color: red;
+}
+.is-valid {
+    border: 1px solid green;
+}
+.invalid-feedback {
+    color: red;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+}
+
+
+  .form-control-large {
+    min-width: 500px; /* or any other size you prefer */
+    height: 200px;    /* for multi-line input, adjust as needed */
+  }
+  
+
+  .submit-button {
+    margin-top: 20px; /* Add 10px margin to the top */
+    /* Add any other button styles you need */
+  }
+  
+
+
+
+  .mui-style-button {
+    background-color: #1976d2; /* MUI primary color */
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+  }
+  
+  .mui-style-button:hover {
+    background-color: #115293; /* Darker shade for hover */
+  }
+  
+  .mui-style-button:disabled {
+    background-color: #cccccc;
+    cursor: default;
+  }
+  
+
+  .mui-style-error {
+    color: #f44336; /* MUI error color */
+    font-size: 1rem; /* Smaller font size */
+    margin-top: 3px; /* Space between the input field and the error message */
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+  }
+  
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .blinking-button {
+    animation: blink 1s infinite;
+  }
+  
+
+
+  .form-level-error {
+    color: red; /* Red color for error messages */
+    margin: 10px 0; /* Some margin to separate it from other elements */
+    padding: 5px; /* Padding for better readability */
+    border: 1px solid red; /* Optional: border to make it more noticeable */
+    background-color: #ffe6e6; /* Light red background for visibility */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center align the text */
+    font-size: 0.9rem; /* Adjust the font size as needed */
+}
+
+
+.form-level-success {
+  color: green; /* Green color for success messages */
+  margin: 10px 0; /* Margin to separate it from other elements */
+  padding: 5px; /* Padding for better readability */
+  border: 1px solid green; /* Border to make it more noticeable */
+  background-color: #e6ffe6; /* Light green background for visibility */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center align the text */
+  font-size: 0.9rem; /* Adjust the font size as needed */
+}
